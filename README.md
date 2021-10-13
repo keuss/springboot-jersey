@@ -1,5 +1,6 @@
 # springboot-jersey
 
+ - Spring Boot v2.5.5, Spring v5.3.10
  - java 11
  - jersey starter
  - log4j2 starter
