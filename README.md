@@ -23,7 +23,7 @@ For `exception is org.glassfish.jersey.server.internal.scanning.ResourceFinderEx
  - https://github.com/spring-projects/spring-boot/issues/7496
  - https://www.ivankrizsan.se/2016/12/06/jersey-and-spring-boot-standalone-jar-files/
 
-## Libs
+## Libs at runtime
 
  - aopalliance-repackaged-2.6.1.jar
  - asm-7.1.jar
