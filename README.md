@@ -2,7 +2,7 @@
 
  - Spring Boot v2.5.5, Spring v5.3.10
  - java 11
- - jersey starter
+ - jersey starter (jersey 2.33)
  - log4j2 starter
  - lombok
  
