@@ -17,7 +17,7 @@ public class DemoController {
 
     @GET
     public Response demo() {
-        // see http://localhost:8080/rest/demo
+        // see http://localhost:8080/api/demo
         return Response.ok(new DemoPojo())
                 .build();
     }
