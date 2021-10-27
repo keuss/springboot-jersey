@@ -5,6 +5,7 @@
  - jersey starter (jersey 2.33)
  - log4j2 starter
  - lombok
+ - Sample static html content
  
 ## Build & test
 
