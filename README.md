@@ -5,7 +5,6 @@
  - jersey starter (jersey 2.33)
  - log4j2 starter
  - lombok
- - Sample static html content
  - Swagger UI 2.2.8 + API KEY
  
 ## Build & test
