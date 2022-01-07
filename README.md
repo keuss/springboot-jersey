@@ -60,6 +60,7 @@ For `exception is org.glassfish.jersey.server.internal.scanning.ResourceFinderEx
 
 Http Session and Redis :
 
+ - https://www.baeldung.com/spring-data-redis-properties
  - https://www.baeldung.com/spring-session
  - https://github.com/eugenp/tutorials/tree/master/spring-security-modules/spring-session
  - https://spring.io/projects/spring-session
