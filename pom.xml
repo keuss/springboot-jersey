@@ -14,9 +14,11 @@
         <!-- must add this if using spring boot bom -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <spring-boot.vesion>2.5.5</spring-boot.vesion>
-        <lombok.version>1.18.16</lombok.version>
-        <swagger.jersey2.version>1.6.3</swagger.jersey2.version>
+        <spring-boot.vesion>2.5.8</spring-boot.vesion>
+        <lombok.version>1.18.22</lombok.version>
+        <swagger.jersey2.version>1.6.4</swagger.jersey2.version>
+        <!-- https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot -->
+        <log4j2.version>2.17.1</log4j2.version>
     </properties>
 
     <dependencyManagement>
@@ -27,6 +29,13 @@
                 <type>pom</type>
                 <version>${spring-boot.vesion}</version>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>${log4j2.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -58,9 +67,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Log4j API -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <!-- Core Log4j -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <!-- SLF4J Compatibility API, with slf4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j2.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
