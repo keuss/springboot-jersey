@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.controllers.AuthController;
 import com.example.demo.controllers.DemoController;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
@@ -19,6 +20,7 @@ public class AppConfig extends ResourceConfig {
         // (nested exception is org.glassfish.jersey.server.internal.scanning.ResourceFinderException: java.io.FileNotFoundException)
         // Since Jersey's scanning step is what's failing, another way to work around it is to explicitly register each resource
         register(DemoController.class);
+        register(AuthController.class);
         //super.packages("com.example.demo.controllers");
 
         //Providers
