@@ -19,6 +19,7 @@
         <swagger.jersey2.version>1.6.4</swagger.jersey2.version>
         <!-- https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot -->
         <log4j2.version>2.17.1</log4j2.version>
+        <embedded-redis.version>0.6</embedded-redis.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +57,18 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,7 +121,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.vesion}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -118,6 +130,32 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- for clean dockerfile and
+          to take advantage of the clean separation between dependencies and application resources in a Spring Boot fat jar file.
+           See target/dependency -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

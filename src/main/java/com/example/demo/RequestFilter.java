@@ -17,7 +17,8 @@ public class RequestFilter implements ContainerRequestFilter {
     private final List<String> methodsNotProtected = Arrays.asList("OPTIONS", "HEAD");
     private final List<String> urlNotProtectedBySession = Arrays.asList(
             "swagger.json",
-            "swagger.yaml"
+            "swagger.yaml",
+            "template"
     );
 
     // TODO API key value check should be externalized
