@@ -5,8 +5,8 @@
  - jersey starter (jersey 2.33)
  - log4j2 starter (2.17.1)
  - Docker compose
- - Redis cache for http session
- - lombok
+ - Redis cache for http session (spring-session)
+ - Lombok
  - Swagger UI 2.2.8 + API KEY
  
 ## Build & test
@@ -16,7 +16,7 @@
  - `docker-compose up`
  - Swagger UI : http://localhost:8080/my-backend/swagger-ui.html (AIP Key value : `DEMO_API_KEY`, header `MY-API-KEY`)
  - Sample REST service at http://localhost:8080/my-backend/api/demo
- - Template : http://localhost:8080/my-backend/template
+ - Template : http://localhost:8080/my-backend/template (to test http session with redis)
 
 
 ## Redis
@@ -46,6 +46,8 @@ root@67249e3c5442:/data# redis-cli hgetall spring:session:sessions:852f6fcc-9973
 
 ## Links
 
+Jersey :
+
  - https://github.com/indrabasak/spring-jersey-swagger-example
  - [Spring MVC vs JAX-RS API](https://www.baeldung.com/rest-api-jax-rs-vs-spring)
  - https://developer.okta.com/blog/2019/12/30/java-jersey-jaxrs
@@ -55,4 +57,21 @@ For `exception is org.glassfish.jersey.server.internal.scanning.ResourceFinderEx
  - https://stackoverflow.com/questions/42194680/spring-boot-application-wont-run-when-trying-to-run-from-the-jar-file
  - https://github.com/spring-projects/spring-boot/issues/7496
  - https://www.ivankrizsan.se/2016/12/06/jersey-and-spring-boot-standalone-jar-files/
+
+Http Session and Redis :
+
+ - https://www.baeldung.com/spring-session
+ - https://github.com/eugenp/tutorials/tree/master/spring-security-modules/spring-session
+ - https://spring.io/projects/spring-session
+ - https://www.javadevjournal.com/spring/spring-session/
+ - https://docs.spring.io/spring-session/docs/2.2.x/reference/html/httpsession.html
+ - https://www.javainuse.com/spring/springboot_session
+ - https://www.javainuse.com/spring/springboot_session_redis
+ - https://stackoverflow.com/questions/37355049/persist-spring-session-without-spring-security
+ - https://github.com/vpavic/javacro16-spring-session
+ - https://programming.vip/docs/spring-session-redis-to-realize-distributed-session.html
+ - https://stackoverflow.com/questions/51229372/unable-to-store-session-in-redis-using-java-spring-boot-session-data-redis
+ - https://github.com/spring-projects/spring-session/blob/main/spring-session-core/src/main/java/org/springframework/session/FlushMode.java
+
+
 
