@@ -5,7 +5,7 @@
  - jersey starter (jersey 2.33)
  - log4j2 starter (2.17.1)
  - Docker compose
- - Redis cache for http session (spring-session)
+ - Redis cache for http session (spring-session). Letucce is the default client for Redis
  - Lombok
  - Swagger UI 2.2.8 + API KEY
  
